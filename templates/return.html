@@ -1,0 +1,46 @@
+<div class="design">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css1.css') }}">
+<style>
+    table,th,td {
+        border-collapse: collapse;     
+        border: 1px solid black; 
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even){background-color: #f2f2f2}
+      
+      th {
+        background-color: #bed1e7;
+        color: rgb(12, 11, 11);
+    }
+</style>
+<h2 align="center">
+    User ID: {{output_data2}}
+</h2>
+<table align="center">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Copies</th>
+        <th>Date of Issue</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in output_data %} 
+            <tr>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td><a href='/returned/{{row[1]}}/{{output_data2}}/{{row[4]}}'><button>Return</button></a></td>
+            </tr>
+        {% endfor %}       
+    </tbody>
+</table>
+<p align="center"><a href='/'><input type="submit" value="Go Back"></a></p>
+</div>
