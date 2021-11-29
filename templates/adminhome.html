@@ -1,0 +1,88 @@
+<div class="design">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/css1.css') }}">
+<style>
+    table,th,td { 
+        border-collapse: collapse;     
+        border: 1px solid black; 
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even){background-color: #f2f2f2}
+      
+      th {
+        background-color:#bed1e7;
+        color: rgb(19, 18, 18);
+    }
+</style>
+
+<h2 align="center">
+    No. of Books left
+</h2>
+<table align="center">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Copies</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in output_data2 %} 
+            <tr>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+            </tr>
+        {% endfor %}       
+    </tbody>
+</table>
+<h2 align="center">
+    No. of Books issued
+</h2>
+<table align="center">
+    <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Copies</th>
+        <th>Date of Issue</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in output_data %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+            </tr>
+        {% endfor %}       
+    </tbody>
+</table>
+<h2 align="center">
+    Fine to be collected
+</h2>
+<table align="center">
+    <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in output_data3 %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+        {% endfor %}       
+    </tbody>
+</table>
+<p align="center"><a href='/'><input type="submit" value="Go Back"></a></p>
+</div>
