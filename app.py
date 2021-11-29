@@ -3,7 +3,7 @@ from flask.templating import render_template
 import mysql.connector
 from datetime import date
 
-con = mysql.connector.connect(host='localhost',user='root',password='G0d!sgreat',database='flaskproject3')
+con = mysql.connector.connect(host='localhost',user='root',password='-----------',database='flaskproject3')
 cur = con.cursor()
 
 app = Flask(__name__)
